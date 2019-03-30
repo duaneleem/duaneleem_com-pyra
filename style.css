@@ -62,7 +62,8 @@ header#page-title h1 {
   font-weight: bold;
 }
 
-#page-title > div > ul > li, i {
+header#page-title > div > div > ul > li, 
+header#page-title > div > div > ul > li > a {
   color: #fff;
 }
 

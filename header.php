@@ -27,72 +27,36 @@
 <body <?php body_class(); ?>>
 
 <header id="topNav">
-	<div class="container">
-		<!-- Mobile Menu Button -->
-		<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-			<i class="fa fa-bars"></i>
-		</button>
+		<div class="container">
 
-		<!-- Logo text or image -->
-		<a class="logo scrollTo" href="#wrapper">
-			<img src="<?php echo esc_url( wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) , 'full' ) ); ?>" class="logo-main" alt="Duane Leem" />
-		</a>
+				<!-- Mobile Menu Button -->
+				<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="fa fa-bars"></i>
+				</button>
 
-		<!-- Top Nav -->
-		<div class="navbar-collapse nav-main-collapse collapse pull-right">
-			<nav class="nav-main mega-menu">
-				<!-- Homepage -->
-				<ul class="nav nav-pills nav-main scroll-menu" id="topMain">
-					<li><a class="scrollTo" href="#wrapper">Home</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" href="#">
-							About <i class="fa fa-angle-down"></i>
-						</a>
-						<ul class="dropdown-menu">
-							<!-- Public Content -->
-							<li><a id="linkSummary" class="scrollTo" href="#summary">Career Summary</a></li>
-							<li><a id="linkPortfolio" class="scrollTo" href="#portfolio">Portfolio</a></li>
-							<li><a class="scrollTo" href="#sectionFooter">Contact</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" href="#">
-							<i class="fab fa-wordpress margin-right-5p"></i> Knowledgebase <i class="fa fa-angle-down"></i>
-						</a>
-						<ul class="dropdown-menu">
-							<!-- Public Content -->
-							<li><a href="https://blog.duaneleem.com/"><i
-										class="fab fa-wordpress margin-right-10px"></i>Knowledgebase Home</a></li>
-							<li><a href="https://blog.duaneleem.com/category/devops/amazon-web-services/"><i
-										class="fab fa-aws margin-right-10px"></i>Amazon Web Services</a></li>
-							<li><a href="https://blog.duaneleem.com/category/web-development/angular/"><i
-										class="fab fa-angular margin-right-10px"></i>Angular</a></li>
-							<li><a href="https://blog.duaneleem.com/category/web-development/react/"><i
-										class="fab fa-react margin-right-10px"></i>React</a></li>
-							<li><a href="https://blog.duaneleem.com/category/web-development/wordpress/"><i
-										class="fab fa-wordpress margin-right-10px"></i>WordPress</a></li>
-						</ul>
-					</li>
+				<!-- Logo text or image -->
+				<a class="logo" href="/">
+						<img src="<?php echo esc_url( wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) , 'full' ) ); ?>" class="logo-main" alt="Duane Leem" />
+				</a>
 
-					<li class="visible-md visible-lg"><a>|</a></li>
-					<li class="visible-md visible-lg"><a href="https://github.com/duaneleem" target="_blank" class="btn"><i
-								class="fab fa-github fa-lg"></i></a></li>
-					<li class="visible-md visible-lg"><a href="http://www.linkedin.com/in/duaneleem" target="_blank"
-							class="btn"><i class="fab fa-linkedin fa-lg"></i></a></li>
-					<li class="visible-md visible-lg"><a
-							href="https://docs.google.com/document/d/1bvakr9gKH-lk7mX_VRstMJ-3Vv3tJLSQuiHWkOdnrUs/edit?usp=sharing"
-							target="_blank" class="btn"><i class="fab fa-google-drive fa-lg"></i></a></li>
-					<li class="visible-xs visible-sm"><a href="https://github.com/duaneleem" target="_blank"><i
-								class="fab fa-github margin-right-10px"></i> GitHub</a></li>
-					<li class="visible-xs visible-sm"><a href="http://www.linkedin.com/in/duaneleem" target="_blank"><i
-								class="fab fa-linkedin margin-right-10px"></i> LinkedIn</a></li>
-					<li class="visible-xs visible-sm"><a
-							href="https://docs.google.com/document/d/1bvakr9gKH-lk7mX_VRstMJ-3Vv3tJLSQuiHWkOdnrUs/edit?usp=sharing"
-							target="_blank"><i class="fab fa-google margin-right-10px"></i> Google Document Resume</a></li>
-				</ul>
-			</nav>
+				<!-- Top Nav -->
+				<div class="navbar-collapse nav-main-collapse collapse pull-right">
+						<nav class="nav-main mega-menu">
+								<!-- Support Links -->
+								<ul class="nav nav-pills nav-main scroll-menu" id="topMain">
+										<li class="active"><a href="https://duaneleem.com"><i class="fa fa-chevron-circle-left fa-lg" style="margin-right: 5px;" aria-hidden="true"></i>Return Home</a></li>
+										<li class="visible-md visible-lg"><a>|</a></li>
+										<li class="visible-md visible-lg"><a href="https://github.com/duaneleem" target="_blank" class="btn"><i class="fab fa-github fa-lg"></i></a></li>
+										<li class="visible-md visible-lg"><a href="http://www.linkedin.com/in/duaneleem" target="_blank" class="btn"><i class="fab fa-linkedin fa-lg"></i></a></li>
+										<li class="visible-md visible-lg"><a href="https://docs.google.com/document/d/1bvakr9gKH-lk7mX_VRstMJ-3Vv3tJLSQuiHWkOdnrUs/edit?usp=sharing" target="_blank" class="btn"><i class="fab fa-google-drive fa-lg"></i></a></li>
+										<li class="visible-xs visible-sm"><a href="https://github.com/duaneleem" target="_blank"><i class="fab fa-github margin-right-10px"></i> GitHub</a></li>
+										<li class="visible-xs visible-sm"><a href="http://www.linkedin.com/in/duaneleem" target="_blank"><i class="fab fa-linkedin margin-right-10px"></i> LinkedIn</a></li>
+										<li class="visible-xs visible-sm"><a href="https://docs.google.com/document/d/1bvakr9gKH-lk7mX_VRstMJ-3Vv3tJLSQuiHWkOdnrUs/edit?usp=sharing" target="_blank"><i class="fab fa-google margin-right-10px"></i> Google Document Resume</a></li>
+								</ul>
+						</nav>
+				</div>
+				<!-- /Top Nav -->
+
 		</div>
-		<!-- /Top Nav -->
-	</div>
 </header>
 

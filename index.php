@@ -16,25 +16,40 @@ get_header();
 ?>
 
 <div id="wrapper">
-  <!-- PAGE TITLE / BREADCRUMB -->
-  <header id="page-title">
-    <div class="container">
-      <h1>Portfolio</h1>
+	<?php if (is_home() && !is_front_page()) : ?>
+		<!-- PAGE TITLE / BREADCRUMB -->
+		<header id="page-title">
+			<div class="container">
+				<h1><?php single_post_title(); ?></h1>
 
-      <ul class="breadcrumb">
-        <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li class="active">Portfolio</li>
-      </ul>
-    </div>
-	</header>
-	
+				<ul class="breadcrumb">
+					<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+					<li><a href="/"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
+					<li class="active"><?php single_post_title(); ?></li>
+				</ul>
+			</div>
+		</header>
+	<?php else : ?>
+		<!-- PAGE TITLE / BREADCRUMB -->
+		<header id="page-title">
+			<div class="container">
+				<div class="row">
+					<h1><?php echo get_bloginfo( 'description', 'display' ); ?></h1>
+
+					<ul class="breadcrumb">
+					<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+						<li class="active"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
+					</ul>
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</header>
+	<?php endif; ?>
+
 	<section id="primary" class="container">
 		<div class="row">
 			<main id="main" class="site-main">
-
 				<?php
 				if ( have_posts() ) :
-
 					if ( is_home() && ! is_front_page() ) :
 						?>
 						<header>
@@ -64,7 +79,6 @@ get_header();
 
 				endif;
 				?>
-
 				</main><!-- #main -->
 		</div><!-- .row -->
 	</section><!-- #primary -->
