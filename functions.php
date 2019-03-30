@@ -121,7 +121,7 @@ add_action( 'widgets_init', 'duaneleem_com_pyra_widgets_init' );
  */
 function duaneleem_com_pyra_scripts() {
 	/* ======================================================================
-		Theme Dependencies | Header
+		Theme Dependencies | Styles
 	====================================================================== */
 	wp_enqueue_style("bootstrap", get_template_directory_uri() . "/node_modules/bootstrap/dist/css/bootstrap.min.css");
 	wp_enqueue_style("fontawesome", get_template_directory_uri() . "/node_modules/@fortawesome/fontawesome-free/css/all.min.css");
@@ -141,20 +141,7 @@ function duaneleem_com_pyra_scripts() {
 	wp_enqueue_style("main-styles", get_template_directory_uri() . "/assets/css/main.css");
 
 	/* ======================================================================
-		Added by underscores.
-	====================================================================== */
-	wp_enqueue_style( 'duaneleem-com-pyra-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'duaneleem-com-pyra-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'duaneleem-com-pyra-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	/* ======================================================================
-		Theme Dependencies | Footer
+		Theme Dependencies | Javascript
 	====================================================================== */
 	wp_enqueue_script("modernizr", get_template_directory_uri() . "/assets/plugins/modernizr.min.js");
 	wp_enqueue_script("jquery", get_template_directory_uri() . "/node_modules/jquery/dist/jquery.min.js");
@@ -176,7 +163,20 @@ function duaneleem_com_pyra_scripts() {
 	wp_enqueue_script("slider-revolution", get_template_directory_uri() . "/assets/js/slider_revolution.js");
 	wp_enqueue_script("scripts-template", get_template_directory_uri() . "/assets/template/js/scripts.js");
 	wp_enqueue_script("customjs", get_template_directory_uri() . "/assets/js/custom.js");
-}
+
+	/* ======================================================================
+		Added by underscores.
+	====================================================================== */
+	wp_enqueue_style( 'duaneleem-com-pyra-style', get_stylesheet_uri() );
+
+	// wp_enqueue_script( 'duaneleem-com-pyra-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+
+	// wp_enqueue_script( 'duaneleem-com-pyra-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	} // if
+} // duaneleem_com_pyra_scripts
 add_action( 'wp_enqueue_scripts', 'duaneleem_com_pyra_scripts' );
 
 /**
