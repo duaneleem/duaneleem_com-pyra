@@ -23,6 +23,7 @@
   "homepage": "https://github.com/duaneleem/duaneleem_com-pyra#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
-    "bootstrap": "^3.4.1"
+    "bootstrap": "^3.4.1",
+    "jquery": "^2.2.4"
   }
 }
