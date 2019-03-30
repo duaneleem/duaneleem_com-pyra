@@ -120,6 +120,29 @@ add_action( 'widgets_init', 'duaneleem_com_pyra_widgets_init' );
  * Enqueue scripts and styles.
  */
 function duaneleem_com_pyra_scripts() {
+	/* ======================================================================
+		Theme Dependencies | Header
+	====================================================================== */
+	wp_enqueue_style("bootstrap", get_stylesheet_uri() . "/node_modules/bootstrap/dist/css/bootstrap.min.css");
+	wp_enqueue_style("fontawesome", get_stylesheet_uri() . "/node_modules/@fortawesome/fontawesome-free/css/all.min.css");
+	wp_enqueue_style("owl-carousel", get_stylesheet_uri() . "/assets/plugins/owl-carousel/owl.carousel.css");
+	wp_enqueue_style("owl-theme", get_stylesheet_uri() . "/assets/plugins/owl-carousel/owl.theme.css");
+	wp_enqueue_style("owl-transitions", get_stylesheet_uri() . "/assets/plugins/owl-carousel/owl.transitions.css");
+	wp_enqueue_style("magnific-popup", get_stylesheet_uri() . "/assets/plugins/magnific-popup/magnific-popup.css");
+	wp_enqueue_style("animate", get_stylesheet_uri() . "/assets/template/css/animate.css");
+	wp_enqueue_style("superslides", get_stylesheet_uri() . "/assets/template/css/superslides.css");
+	wp_enqueue_style("slider-revolution-v4-settings", get_stylesheet_uri() . "/assets/plugins/slider.revolution.v4/css/settings.css");
+	wp_enqueue_style("timeline", get_stylesheet_uri() . "/assets/css/timeline.css");
+	wp_enqueue_style("essentials", get_stylesheet_uri() . "/assets/template/css/essentials.css");
+	wp_enqueue_style("layout", get_stylesheet_uri() . "/assets/template/css/layout.css");
+	wp_enqueue_style("layout-responsive", get_stylesheet_uri() . "/assets/template/css/layout-responsive.css");
+	wp_enqueue_style("lightgrey", get_stylesheet_uri() . "/assets/template/css/color_scheme/lightgrey.css");
+	wp_enqueue_style("header", get_stylesheet_uri() . "/assets/css/header.css");
+	wp_enqueue_style("main-styles", "/assets/css/main.css");
+
+	/* ======================================================================
+		Added by underscores.
+	====================================================================== */
 	wp_enqueue_style( 'duaneleem-com-pyra-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'duaneleem-com-pyra-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -129,6 +152,11 @@ function duaneleem_com_pyra_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	/* ======================================================================
+		Theme Dependencies | Footer
+	====================================================================== */
+	
 }
 add_action( 'wp_enqueue_scripts', 'duaneleem_com_pyra_scripts' );
 

@@ -1,0 +1,28 @@
+{
+  "name": "duaneleem_com-pyra",
+  "version": "0.0.1",
+  "description": "DuaneLeem.com Pyra theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duaneleem/duaneleem_com-pyra.git"
+  },
+  "keywords": [
+    "duaneleem",
+    "duane",
+    "leem"
+  ],
+  "author": "Duane Leem <duane@leemfamily.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duaneleem/duaneleem_com-pyra/issues"
+  },
+  "homepage": "https://github.com/duaneleem/duaneleem_com-pyra#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "bootstrap": "^3.4.1"
+  }
+}
