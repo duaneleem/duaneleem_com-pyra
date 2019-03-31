@@ -20,26 +20,30 @@ get_header();
 		<!-- PAGE TITLE / BREADCRUMB -->
 		<header id="page-title">
 			<div class="container">
-				<h1><?php single_post_title(); ?></h1>
+				<div class="col-lg-12">
+					<h1><?php single_post_title(); ?></h1>
 
-				<ul class="breadcrumb">
-					<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-					<li><a href="/"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
-					<li class="active"><?php single_post_title(); ?></li>
-				</ul>
-			</div>
+					<ul class="breadcrumb">
+						<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+						<li><a href="/"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
+						<li class="active"><?php single_post_title(); ?></li>
+					</ul>
+				</div>
+			</div><!-- /.container -->
 		</header>
 	<?php else : ?>
 		<!-- PAGE TITLE / BREADCRUMB -->
 		<header id="page-title">
 			<div class="container">
 				<div class="row">
+					<div class="col-lg-12">
 					<h1><?php echo get_bloginfo( 'description', 'display' ); ?></h1>
 
 					<ul class="breadcrumb">
 					<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
 						<li class="active"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
 					</ul>
+					</div><!-- /.col -->
 				</div><!-- .row -->
 			</div><!-- .container -->
 		</header>
@@ -47,43 +51,41 @@ get_header();
 
 	<section id="primary" class="container">
 		<div class="row">
-			<main id="main" class="site-main">
+			<main id="main" class="col-md-9">
 				<?php
 				if ( have_posts() ) :
-					if ( is_home() && ! is_front_page() ) :
-						?>
-						<header>
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-						</header>
-						<?php
-					endif;
-
 					/* Start the Loop */
-					while ( have_posts() ) :
-						the_post();
-
-						/*
-						* Include the Post-Type-specific template for the content.
-						* If you want to override this in a child theme, then include a file
-						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						*/
-						get_template_part( 'template-parts/content', get_post_type() );
-
-					endwhile;
+					$intCount = 1;
+					while ( have_posts() ) : the_post(); ?>
+						<div class="col-sm-6" style="margin-bottom: 20px;">
+							<?php
+								/*
+								* Include the Post-Format-specific template for the content.
+								* If you want to override this in a child theme, then include a file
+								* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								*/
+								if (is_home()) {
+									get_template_part( 'template-parts/content', "hp" );
+								} else {
+									get_template_part( 'template-parts/content', get_post_format() );
+								} // if
+							?>
+						</div><!-- /col -->
+						<?php if ($intCount % 2 == 0) { ?><div class="clearfix"></div><?php } $intCount++; ?>
+					<?php endwhile;
 
 					the_posts_navigation();
-
 				else :
-
 					get_template_part( 'template-parts/content', 'none' );
+				endif; ?>
+			</main><!-- #main -->
 
-				endif;
-				?>
-				</main><!-- #main -->
+			<div class="col-md-3">
+				<?php get_sidebar(); ?>
+			</div>
 		</div><!-- .row -->
 	</section><!-- #primary -->
 </div><!-- #wrapper -->
 
 <?php
-get_sidebar();
 get_footer();

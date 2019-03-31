@@ -108,10 +108,10 @@ function duaneleem_com_pyra_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'duaneleem-com-pyra' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'duaneleem-com-pyra' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="panel panel-default %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<div class="panel-heading space-bottom-10"><h3 class="panel-title widget-title">',
+		'after_title'   => '</h3></div>',
 	) );
 }
 add_action( 'widgets_init', 'duaneleem_com_pyra_widgets_init' );

@@ -22,11 +22,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Admin Bar
 # Header
+# Widget Area
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Header
+# Admin Bar
 --------------------------------------------------------------*/
 /* Desktop */
 @media screen and (min-width: 991px) {
@@ -46,6 +48,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	.admin-bar > div#primary { margin-top: 62px; }
 }
 
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 /* Add a BG to banner area */
 header#page-title {
   background: 
@@ -62,8 +67,8 @@ header#page-title h1 {
   font-weight: bold;
 }
 
-header#page-title > div > div > ul > li, 
-header#page-title > div > div > ul > li > a {
+header#page-title > div > div > div > ul > li, 
+header#page-title > div > div > div > ul > li > a {
   color: #fff;
 }
 
@@ -82,3 +87,8 @@ header#page-title > div > div > ul > li > a {
 .modal {
   padding-top: 0px;
 }
+
+/*--------------------------------------------------------------
+# Widget Area
+--------------------------------------------------------------*/
+.widget-area > .panel.panel-default { border: solid .5px lightgray; }
