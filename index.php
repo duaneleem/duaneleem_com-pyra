@@ -16,48 +16,34 @@ get_header();
 ?>
 
 <div id="wrapper">
-	<?php if (is_home() && !is_front_page()) : ?>
-		<!-- PAGE TITLE / BREADCRUMB -->
-		<header id="page-title">
-			<div class="container">
+	<!-- PAGE TITLE / BREADCRUMB -->
+	<header id="page-title">
+		<div class="container">
+			<div class="row">
 				<div class="col-lg-12">
-					<h1><?php single_post_title(); ?></h1>
+				<h1><?php echo (is_home() && !is_front_page() ? single_post_title() : get_bloginfo( 'description', 'display' )); ?></h1>
 
-					<ul class="breadcrumb">
-						<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-						<li><a href="/"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
-						<li class="active"><?php single_post_title(); ?></li>
-					</ul>
-				</div>
-			</div><!-- /.container -->
-		</header>
-	<?php else : ?>
-		<!-- PAGE TITLE / BREADCRUMB -->
-		<header id="page-title">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-					<h1><?php echo get_bloginfo( 'description', 'display' ); ?></h1>
-
-					<ul class="breadcrumb">
+				<ul class="breadcrumb">
 					<li><a href="https://duaneleem.com"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-						<li class="active"><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
-					</ul>
-					</div><!-- /.col -->
-				</div><!-- .row -->
-			</div><!-- .container -->
-		</header>
-	<?php endif; ?>
+					<li <?php echo (is_home() && !is_front_page() ? "href='/'" : "class='active'" ) ?>><i class="fab fa-wordpress margin-right-5p"></i> Blog</li>
+					<?php if (is_home() && !is_front_page() ) { ?><li class="active"><?php single_post_title(); ?></li><?php } ?>
+				</ul>
+				</div><!-- /.col -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</header>
+
+
 
 	<section id="primary" class="container">
 		<div class="row">
-			<main id="main" class="col-md-9">
+			<main id="main" class="<?php (is_home() ? "col-md-12" : "col-md-9"); ?>">
 				<?php
 				if ( have_posts() ) :
 					/* Start the Loop */
 					$intCount = 1;
 					while ( have_posts() ) : the_post(); ?>
-						<div class="col-sm-6" style="margin-bottom: 20px;">
+						<div class="col-sm-4" style="margin-bottom: 20px;">
 							<?php
 								/*
 								* Include the Post-Format-specific template for the content.
@@ -71,7 +57,7 @@ get_header();
 								} // if
 							?>
 						</div><!-- /col -->
-						<?php if ($intCount % 2 == 0) { ?><div class="clearfix"></div><?php } $intCount++; ?>
+						<?php if ($intCount % 3 == 0) { ?><div class="clearfix"></div><?php } $intCount++; ?>
 					<?php endwhile;
 
 					the_posts_navigation();
@@ -80,9 +66,12 @@ get_header();
 				endif; ?>
 			</main><!-- #main -->
 
-			<div class="col-md-3">
-				<?php get_sidebar(); ?>
-			</div>
+			<!-- Show sidebar if not homepage. -->
+			<?php if (!is_home()) { ?>
+				<div class="col-md-3">
+					<?php get_sidebar(); ?>
+				</div>
+			<?php } ?>
 		</div><!-- .row -->
 	</section><!-- #primary -->
 </div><!-- #wrapper -->
